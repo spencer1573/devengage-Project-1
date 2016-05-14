@@ -1,0 +1,32 @@
+
+body {
+}
+
+img { 
+  width: 100%;
+  height: auto;
+}
+
+.main-section { 
+  margin: 0 auto;
+  width: 960px; 
+  height: auto;
+}
+
+.left-section { 
+  width: 20%;
+  float: left;
+}
+
+.right-section {
+  width: 80%;
+  float: right;
+}
+
+.footer {
+  clear: both;
+}
+
+hr { 
+  margin: 20px 0px 0px 0px;
+}
