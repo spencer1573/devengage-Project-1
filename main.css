@@ -1,11 +1,21 @@
 
-img { 
+.main-img { 
   width: 100%;
   height: auto;
 }
 
+.icon {
+  width: 40px;
+  height: auto;
+}
+
+p { 
+  color: #333339; 
+}
+
 .main-section { 
   margin: 0 auto;
+  margin-top: 50px;
   width: 960px; 
   height: auto;
 }
@@ -38,9 +48,39 @@ img {
 }
 
 .footer {
+  width: 960px;
+  margin: 0 auto; 
+  height: auto;
   clear: both;
 }
 
-hr { 
-  margin: 20px 0px 0px 0px;
+.dashed-hr {
+  border-top: 1px dashed #E5E5E5;
+}
+
+.top-dashed-hr {
+  margin-top: 75px;
+}
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.email-section { 
+  display: inline-block;
+}
+
+#email-section-1 {
+}
+
+#email-section-1 {
+}
+
+.bottom-dashed-hr {
+}
+
+
+#bottom-hr { 
+  border-top: 1px solid #E5E5E5;
 }
