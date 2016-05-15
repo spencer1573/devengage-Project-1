@@ -30,6 +30,7 @@ img {
   background-color: #EFF8F7;
   color: #60BEAE;
   text-decoration: none;
+  float: left;
 }
 
 .main-btn:hover {
