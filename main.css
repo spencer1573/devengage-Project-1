@@ -74,7 +74,12 @@ p {
 #email-section-1 {
 }
 
-#email-section-1 {
+#email-section-2 {
+  width: 60%;
+}
+
+#email-section-form {
+  width: 20%;
 }
 
 .bottom-dashed-hr {
