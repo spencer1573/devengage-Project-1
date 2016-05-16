@@ -68,18 +68,28 @@ p {
 }
 
 .email-section { 
-  display: inline-block;
+  float: left;
+  /*display: block;*/
 }
 
 #email-section-1 {
+  width: 5%
 }
 
 #email-section-2 {
   width: 60%;
 }
-
+/*
 #email-section-form {
   width: 20%;
+}
+*/
+#email-section-3 {
+  width: 10%;
+}
+
+#email-section-4 {
+  width: 10%;
 }
 
 .bottom-dashed-hr {
