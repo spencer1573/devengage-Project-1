@@ -58,22 +58,24 @@ p {
   border-top: 1px dashed #E5E5E5;
 }
 
-.top-dashed-hr {
-  margin-top: 75px;
-}
-
 .row {
   width: 100%;
   margin: 0 auto;
+  border-bottom: 1px dashed #E5E5E5;
+  border-top: 1px dashed #E5E5E5;
+  margin-top: 50px;
 }
 
 .email-section { 
   float: left;
+  height: auto;
   /*display: block;*/
 }
 
 #email-section-1 {
-  width: 5%
+  width: 5%; 
+  margin-top: 15px;
+  margin-right: 10px;
 }
 
 #email-section-2 {
@@ -85,16 +87,14 @@ p {
 }
 */
 #email-section-3 {
+  margin-top: 30px;
   width: 10%;
 }
 
 #email-section-4 {
+  margin-top: 30px;
   width: 10%;
 }
-
-.bottom-dashed-hr {
-}
-
 
 #bottom-hr { 
   border-top: 1px solid #E5E5E5;
