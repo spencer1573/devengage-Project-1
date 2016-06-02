@@ -162,8 +162,13 @@ $(document).ready(function() {
                 document
                     .getElementById(store_img[0][1])
                     .style.backgroundColor = "white";
-                console.log("this is the id: " + store_img[0][1]);
-                console.log($('#dis-0,1').attr('id'));
+                
+                //$('#dis-0,0').fadeIn();                
+                //$('#dis-0,1').fadeIn();                
+                //$('#dis-1,0').fadeIn();                
+                //$('#dis-1,1').fadeIn();                
+                $('.dis').fadeIn();                
+                //$(this).fadeIn(); 
                 console.log("this should fade in");
 
             }
