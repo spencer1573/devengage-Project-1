@@ -20,7 +20,7 @@ function shuffle(array) {
 
 var pp_Random = ["0-sb","0-sb","1-hr","1-hr","2-b","2-b","3-cz","3-cz","4-mz","4-mz","5-p","5-p","6-ps","6-ps","7-tc","7-tc"];
 
-shuffle(pp_Random);
+//shuffle(pp_Random);
 
 document.body.style.backgroundColor = "#C5EFF7"; 
 
@@ -50,13 +50,28 @@ for(var row = 0; row < 4; row++) {
         var imgDiv = document.getElementById(id);
 
         var insertImage = document.createElement('img');
-        insertImage.style.display = "inline";
+        //insertImage.style.display = "inline";
+        //insertImage.style.position = "relative";
+        insertImage.style.position = "relative";
         insertImage.style.width = "auto";
         insertImage.style.height = "75px";
         var image_name = pp_Random.shift();
         insertImage.src = "./icons/" + image_name + ".png";
         insertImage.className = image_name;
         imgDiv.appendChild(insertImage);
+        
+        var red_x = document.createElement('img');
+        //red_x.style.display = "inline";
+        red_x.style.position = "absolute";
+        red_x.style.top = "0";
+        red_x.style.left = "0";
+        red_x.style.width = "75px";
+        red_x.style.height = "75px";
+        red_x.src = "./icons/red-x.png";
+        red_x.className = "x";
+        red_x.style.display = "none";
+        imgDiv.appendChild(red_x);
+    
 
         var divDis = document.createElement('div');
         divDis.id = "dis-" + id;
@@ -111,6 +126,9 @@ $('.dis').click(function (event) {
             .parentElement
             .getElementsByTagName('img')[0]
             .className;
+    console.log(document
+            .getElementById(event.target.id)
+            );
     var id = event.target.id;
             
             
@@ -120,18 +138,33 @@ $('.dis').click(function (event) {
     store_img[count][1] = id;
     if (count === 1) {
         if (store_img[0][0] === store_img[1][0]) {
-            var red_x = document.createElement('img');
-            red_x.src = './icons/red-x.png';
-            red_x.style.height = "75px";
-            red_x.style.width = "auto";
-            console.log(red_x);
-            document.getElementById(store_img[0][1]).appendChild(red_x); 
-            console.log('heress');
-            //console.log(document.getElementById(event.target.id));
-        } else {
 
-            console.log(document.getElementById(store_img[0][1]).backgroundColor);
-            document.getElementById(store_img[0][1]).backgroundColor = "white";
+            var x_0 = document
+                   .getElementById(store_img[0][1])
+                   .parentElement
+                   .getElementsByTagName('img')[1]
+                   ;
+
+            var x_1 = document
+                   .getElementById(store_img[1][1])
+                   .parentElement
+                   .getElementsByTagName('img')[1]
+                   ;
+            
+            x_0.src = "./icons/blue-x.png";
+            x_0.style.display = "";
+
+            x_1.src = "./icons/blue-x.png";
+            x_1.style.display = "";
+                
+            console.log('heress');
+        } else {
+            document
+                .getElementById(store_img[0][1])
+                .style.backgroundColor = "white";
+            console.log('#' + store_img[0][1]);
+            console.log($('#' + store_img[0][1]).attr('id'));
+            console.log("this should fade in");
 
         }
         setTimeout(function(){
