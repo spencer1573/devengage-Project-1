@@ -113,79 +113,80 @@ p_div.appendChild(player);
 var count = 0;
 var match = false;
 var store_img = [[0,0],[1,1],[2,2],[3,3]];
-
-$('.dis').click(function (event) {
-    //var divClicked = document.getElementById(event.target.id);
-    //console.log(divClicked);
-    $(this).fadeOut();
-    //console.log($(this));
-    console.log(count);
-    //event.target.css("background-color", "black");
-    var string = document
-            .getElementById(event.target.id)
-            .parentElement
-            .getElementsByTagName('img')[0]
-            .className;
-    console.log(document
-            .getElementById(event.target.id)
-            );
-    var id = event.target.id;
-            
-            
-    console.log(string);
-
-    store_img[count][0] = string;
-    store_img[count][1] = id;
-    if (count === 1) {
-        if (store_img[0][0] === store_img[1][0]) {
-
-            var x_0 = document
-                   .getElementById(store_img[0][1])
-                   .parentElement
-                   .getElementsByTagName('img')[1]
-                   ;
-
-            var x_1 = document
-                   .getElementById(store_img[1][1])
-                   .parentElement
-                   .getElementsByTagName('img')[1]
-                   ;
-            
-            x_0.src = "./icons/blue-x.png";
-            x_0.style.display = "";
-
-            x_1.src = "./icons/blue-x.png";
-            x_1.style.display = "";
+$(document).ready(function() {
+    $('.dis').click(function (event) {
+        //var divClicked = document.getElementById(event.target.id);
+        //console.log(divClicked);
+        $(this).fadeOut();
+        //console.log($(this));
+        console.log(count);
+        //event.target.css("background-color", "black");
+        var string = document
+                .getElementById(event.target.id)
+                .parentElement
+                .getElementsByTagName('img')[0]
+                .className;
+        console.log(document
+                .getElementById(event.target.id)
+                );
+        var id = event.target.id;
                 
-            console.log('heress');
-        } else {
-            document
-                .getElementById(store_img[0][1])
-                .style.backgroundColor = "white";
-            console.log('#' + store_img[0][1]);
-            console.log($('#' + store_img[0][1]).attr('id'));
-            console.log("this should fade in");
+                
+        console.log(string);
 
-        }
-        setTimeout(function(){
-       /*
-            $("body").fadeTo('slow', 0.3, function() {
-                $(this).css("z-index", "-1");
-                $(this).css("background-color", "#EC6448");
-            });
-       */         
-            console.log(store_img);
+        store_img[count][0] = string;
+        store_img[count][1] = id;
+        if (count === 1) {
+            if (store_img[0][0] === store_img[1][0]) {
+
+                var x_0 = document
+                       .getElementById(store_img[0][1])
+                       .parentElement
+                       .getElementsByTagName('img')[1]
+                       ;
+
+                var x_1 = document
+                       .getElementById(store_img[1][1])
+                       .parentElement
+                       .getElementsByTagName('img')[1]
+                       ;
+                
+                x_0.src = "./icons/blue-x.png";
+                x_0.style.display = "";
+
+                x_1.src = "./icons/blue-x.png";
+                x_1.style.display = "";
+                    
+                console.log('heress');
+            } else {
+                document
+                    .getElementById(store_img[0][1])
+                    .style.backgroundColor = "white";
+                console.log("this is the id: " + store_img[0][1]);
+                var img_id = '#dis-0.1';
+                console.log($('#dis-0.1').attr('id'));
+                console.log("this should fade in");
+
+            }
+            setTimeout(function(){
+           /*
+                $("body").fadeTo('slow', 0.3, function() {
+                    $(this).css("z-index", "-1");
+                    $(this).css("background-color", "#EC6448");
+                });
+           */         
+                console.log(store_img);
+                
+                document.getElementById('player').innerHTML = "player 2 turn - red";
+                $("body").css("background-color", "#EC6448");
+            }, 500);
             
-            document.getElementById('player').innerHTML = "player 2 turn - red";
-            $("body").css("background-color", "#EC6448");
-        }, 500);
-        
-        
-    } else if (count === 2) {
-        $("body").css("background-color", "#C5EFF7");
-        count = 0;
-    }
-    count++;
+            
+        } else if (count === 2) {
+            $("body").css("background-color", "#C5EFF7");
+            count = 0;
+        }
+        count++;
+    });
 });
-
 
