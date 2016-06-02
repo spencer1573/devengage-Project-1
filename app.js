@@ -163,8 +163,7 @@ $(document).ready(function() {
                     .getElementById(store_img[0][1])
                     .style.backgroundColor = "white";
                 console.log("this is the id: " + store_img[0][1]);
-                var img_id = '#dis-0.1';
-                console.log($('#dis-0.1').attr('id'));
+                console.log($('#dis-0,1').attr('id'));
                 console.log("this should fade in");
 
             }
