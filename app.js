@@ -20,7 +20,7 @@ function shuffle(array) {
 
 var pp_Random = ["0-sb","0-sb","1-hr","1-hr","2-b","2-b","3-cz","3-cz","4-mz","4-mz","5-p","5-p","6-ps","6-ps","7-tc","7-tc"];
 
-//shuffle(pp_Random);
+shuffle(pp_Random);
 
 document.body.style.backgroundColor = "#C5EFF7"; 
 
