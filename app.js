@@ -111,6 +111,7 @@ var count = 0;
 var match = false;
 var store_img = [[0,0],[1,1],[2,2],[3,3]];
 var make_it_zero = false;
+var make_it_two = false;
 $(document).ready(function() {
     $('.dis').click(function (event) {
         //var divClicked = document.getElementById(event.target.id);
@@ -154,18 +155,19 @@ $(document).ready(function() {
 
                 x_1.src = "./icons/blue-x.png";
                 x_1.style.display = "";
+                make_it_zero = true;
                     
             } else {
                 
                 setTimeout(function(){
                     $('#' + store_img[0][1] + ",#" + store_img[1][1]).fadeIn();                
                 }, 500);
+                setTimeout(function(){
+                    document.getElementById('player').innerHTML = "player 2 turn - red";
+                    $("body").css("background-color", "#EC6448");
+                }, 500);
 
             }
-            setTimeout(function(){
-                document.getElementById('player').innerHTML = "player 2 turn - red";
-                $("body").css("background-color", "#EC6448");
-            }, 500);
             
             
         } else if (count === 3) {
@@ -188,22 +190,31 @@ $(document).ready(function() {
 
                 x_3.src = "./icons/red-x.png";
                 x_3.style.display = "";
+                make_it_two = true;
                     
             } else {
                 
                 setTimeout(function(){
                     $('#' + store_img[2][1] + ",#" + store_img[3][1]).fadeIn();                
                 }, 500);
+                setTimeout(function(){
+                    document.getElementById('player').innerHTML = "player 1 turn - blue";
+                    $("body").css("background-color", "#C5EFF7");
+                }, 500);
 
             }
-            setTimeout(function(){
-                document.getElementById('player').innerHTML = "player 1 turn - blue";
-                $("body").css("background-color", "#C5EFF7");
-            }, 500);
-            make_it_zero = true;
+            if (make_it_two) {
+                // do nothing
+            } else {
+                make_it_zero = true;
+            }
         }
 
-        if (make_it_zero) {
+        if (make_it_two) {
+            count = 2;
+            make_it_two = false;
+        }
+        else if (make_it_zero) {
             count = 0;
             make_it_zero = false;
         } else {
