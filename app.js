@@ -20,7 +20,7 @@ function shuffle(array) {
 
 var pp_Random = ["0-sb","0-sb","1-hr","1-hr","2-b","2-b","3-cz","3-cz","4-mz","4-mz","5-p","5-p","6-ps","6-ps","7-tc","7-tc"];
 
-//shuffle(pp_Random);
+shuffle(pp_Random);
 
 document.body.style.backgroundColor = "#C5EFF7"; 
 
@@ -35,7 +35,7 @@ for(var row = 0; row < 4; row++) {
     for(var col = 0; col < 4; col++) {
 
         var gridDiv = document.createElement('div');
-        var id = '' + row + ',' + col;
+        var id = '' + row + col;
         gridDiv.id = id;
         gridDiv.style.width = "75px";
         gridDiv.style.height = "75px";
@@ -50,8 +50,6 @@ for(var row = 0; row < 4; row++) {
         var imgDiv = document.getElementById(id);
 
         var insertImage = document.createElement('img');
-        //insertImage.style.display = "inline";
-        //insertImage.style.position = "relative";
         insertImage.style.position = "relative";
         insertImage.style.width = "auto";
         insertImage.style.height = "75px";
@@ -61,7 +59,6 @@ for(var row = 0; row < 4; row++) {
         imgDiv.appendChild(insertImage);
         
         var red_x = document.createElement('img');
-        //red_x.style.display = "inline";
         red_x.style.position = "absolute";
         red_x.style.top = "0";
         red_x.style.left = "0";
@@ -113,6 +110,7 @@ p_div.appendChild(player);
 var count = 0;
 var match = false;
 var store_img = [[0,0],[1,1],[2,2],[3,3]];
+var make_it_zero = false;
 $(document).ready(function() {
     $('.dis').click(function (event) {
         //var divClicked = document.getElementById(event.target.id);
@@ -157,40 +155,61 @@ $(document).ready(function() {
                 x_1.src = "./icons/blue-x.png";
                 x_1.style.display = "";
                     
-                console.log('heress');
             } else {
-                document
-                    .getElementById(store_img[0][1])
-                    .style.backgroundColor = "white";
                 
-                //$('#dis-0,0').fadeIn();                
-                //$('#dis-0,1').fadeIn();                
-                //$('#dis-1,0').fadeIn();                
-                //$('#dis-1,1').fadeIn();                
-                $('.dis').fadeIn();                
-                //$(this).fadeIn(); 
-                console.log("this should fade in");
+                setTimeout(function(){
+                    $('#' + store_img[0][1] + ",#" + store_img[1][1]).fadeIn();                
+                }, 500);
 
             }
             setTimeout(function(){
-           /*
-                $("body").fadeTo('slow', 0.3, function() {
-                    $(this).css("z-index", "-1");
-                    $(this).css("background-color", "#EC6448");
-                });
-           */         
-                console.log(store_img);
-                
                 document.getElementById('player').innerHTML = "player 2 turn - red";
                 $("body").css("background-color", "#EC6448");
             }, 500);
             
             
-        } else if (count === 2) {
-            $("body").css("background-color", "#C5EFF7");
-            count = 0;
+        } else if (count === 3) {
+            if (store_img[2][0] === store_img[3][0]) {
+
+                var x_2 = document
+                       .getElementById(store_img[2][1])
+                       .parentElement
+                       .getElementsByTagName('img')[1]
+                       ;
+
+                var x_3 = document
+                       .getElementById(store_img[3][1])
+                       .parentElement
+                       .getElementsByTagName('img')[1]
+                       ;
+                
+                x_2.src = "./icons/red-x.png";
+                x_2.style.display = "";
+
+                x_3.src = "./icons/red-x.png";
+                x_3.style.display = "";
+                    
+            } else {
+                
+                setTimeout(function(){
+                    $('#' + store_img[2][1] + ",#" + store_img[3][1]).fadeIn();                
+                }, 500);
+
+            }
+            setTimeout(function(){
+                document.getElementById('player').innerHTML = "player 1 turn - blue";
+                $("body").css("background-color", "#C5EFF7");
+            }, 500);
+            make_it_zero = true;
         }
-        count++;
+
+        if (make_it_zero) {
+            count = 0;
+            make_it_zero = false;
+        } else {
+            count++; 
+        }
+            
     });
 });
 
