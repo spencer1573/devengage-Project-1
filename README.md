@@ -1,11 +1,11 @@
-# engage-game-project
-This project helps developers learn Object Oriented programming.
+# Copying a website by just looking at a picture of it
+
+
 
 ## What we will use
-- TypeScript
-- SCSS
 - Webpack
-- Firebase
+- Html
+- CSS
 
 ## Steps
 - fork project
