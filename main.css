@@ -60,7 +60,10 @@ p {
 
 .row {
   width: 100%;
+  height: 65px;
   margin: 0 auto;
+  overflow: visible;
+  position: relative;
   border-bottom: 1px dashed #E5E5E5;
   border-top: 1px dashed #E5E5E5;
   margin-top: 50px;
@@ -76,23 +79,22 @@ p {
   width: 5%; 
   margin-top: 15px;
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 #email-section-2 {
   width: 60%;
 }
-/*
+
 #email-section-form {
-  width: 20%;
+  margin-top: 25px;
 }
-*/
+
 #email-section-3 {
-  margin-top: 30px;
   width: 10%;
 }
 
 #email-section-4 {
-  margin-top: 30px;
   width: 10%;
 }
 
